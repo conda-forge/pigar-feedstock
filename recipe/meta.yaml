@@ -1,6 +1,6 @@
 {% set name = "pigar" %}
-{% set version = "0.7.2" %}
-{% set sha256 = "e9a037532efbfcdff1479c8b13bc8c34d0812c1671b607b322cac697accaacd6" %}
+{% set version = "0.9.0" %}
+{% set sha256 = "2feb679abe7da1f583fcacbb518b86b5766d59300ddd3e5cf9f0f37ff625f0b8" %}
 
 package:
   name: {{ name|lower }}
