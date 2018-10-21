@@ -24,8 +24,8 @@ requirements:
 
   run:
     - python
-    - colorama
-    - gevent
+    - colorama==0.3.9
+    - requests==2.18.4
     - futures  # [py2k]
 
 test:
