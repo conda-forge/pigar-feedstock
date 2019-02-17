@@ -1,6 +1,6 @@
 {% set name = "pigar" %}
-{% set version = "0.7.2" %}
-{% set sha256 = "e9a037532efbfcdff1479c8b13bc8c34d0812c1671b607b322cac697accaacd6" %}
+{% set version = "0.9.1" %}
+{% set sha256 = "2849c348d6e893313d6eeb211dc84458c83931c403c26ecda7492724b3ceb06e" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/damnever/pigar/archive/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
     - pigar = pigar.__main__:main
@@ -24,9 +24,9 @@ requirements:
 
   run:
     - python
-    - colorama
-    - gevent
-    - futures  # [py2k]
+    - colorama >=0.3.9
+    - requests >=2.20.0
+    - futures            # [py2k]
 
 test:
   imports:
