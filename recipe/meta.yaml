@@ -1,6 +1,6 @@
 {% set name = "pigar" %}
 {% set version = "0.9.1" %}
-{% set sha256 = "039a779accafee334b2d84f2391ea4cd0eb84bc419cd8437bc67cb4a910a0a77" %}
+{% set sha256 = "2849c348d6e893313d6eeb211dc84458c83931c403c26ecda7492724b3ceb06e" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/damnever/pigar/archive/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
