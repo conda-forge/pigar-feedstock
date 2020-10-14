@@ -3,7 +3,7 @@ About pigar
 
 Home: https://github.com/damnever/pigar
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pigar-feedstock/blob/master/LICENSE.txt)
 
