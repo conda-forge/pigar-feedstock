@@ -26,6 +26,7 @@ requirements:
     - python
     - colorama >=0.3.9
     - requests >=2.20.0
+    - nbformat >=4.4.0
     - futures            # [py2k]
 
 test:
