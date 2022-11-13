@@ -1,6 +1,6 @@
 {% set name = "pigar" %}
-{% set version = "0.10.0" %}
-{% set sha256 = "4f7a2887b20a41a08deb4eab29936093724bddb73c7f123f0a9dc6f9827d73a3" %}
+{% set version = "1.0.2" %}
+{% set sha256 = "875ad66c66dfd1ff4d23b0ee3629edd264e67e6510c328ec6c6454f09f04ddf0" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - pigar = pigar.__main__:main
