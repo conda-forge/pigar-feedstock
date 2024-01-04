@@ -1,48 +1,49 @@
 {% set name = "pigar" %}
-{% set version = "0.10.0" %}
-{% set sha256 = "4f7a2887b20a41a08deb4eab29936093724bddb73c7f123f0a9dc6f9827d73a3" %}
+{% set version = "2.1.1" %}
+{% set sha256 = "18dfa0daabbc23e5c14abca8b230c83e6a373ac37fadf2cee26b5a9bc9991fed" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pigar-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 2
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
-    - pigar = pigar.__main__:main
+    - pigar=pigar.__main__:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
-
   run:
-    - python
-    - colorama >=0.3.9
-    - requests >=2.20.0
-    - nbformat >=4.4.0
-    - futures            # [py2k]
+    - python >=3.7
+    - click >=8.1
+    - nbformat >=5.7
+    - aiohttp >=3.8
 
 test:
   imports:
     - pigar
   commands:
+    - pip check
     - pigar --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/damnever/pigar
-  license: BSD-3-Clause
-  license_family: BSD
-  license_file: LICENSE
-  summary: |
-    A fantastic tool to generate requirements for your Python project, and more
-    than that.
+  summary: A fantastic tool to generate requirements for your Python project, and more than that.
+  dev_url: https://github.com/damnever/pigar
+  license: BSD-3-Clause AND MIT
+  license_file:
+    - LICENSE
+    - pigar/_vendor/pip/LICENSE.txt
 
 extra:
   recipe-maintainers:
