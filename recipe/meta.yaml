@@ -1,5 +1,5 @@
 {% set name = "pigar" %}
-{% set version = "2.1.4" %}
+{% set version = "2.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pigar-{{ version }}.tar.gz
-  sha256: 6306d0b4175e4ec9d9209b4156711b46ef479ef2b2ce0423991f0966166d45de
+  sha256: a524cd7b9aa67efba3a403988e4630676b05831fcbcb7ecaa01377e88abb5e96
 
 build:
   entry_points:
@@ -27,6 +27,7 @@ requirements:
     - click >=8.1
     - nbformat >=5.7
     - aiohttp >=3.9
+    - colorama
 
 test:
   imports:
