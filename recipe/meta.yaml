@@ -1,13 +1,13 @@
 {% set name = "pigar" %}
-{% set version = "2.1.6" %}
+{% set version = "2.1.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pigar-{{ version }}.tar.gz
-  sha256: a524cd7b9aa67efba3a403988e4630676b05831fcbcb7ecaa01377e88abb5e96
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pigar-{{ version }}.tar.gz
+  sha256: 7918d6dece3ecc7003b8281d3493ac9c67d82c870016237be2f9993d8095155e
 
 build:
   entry_points:
