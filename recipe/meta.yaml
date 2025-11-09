@@ -1,5 +1,5 @@
 {% set name = "pigar" %}
-{% set version = "2.1.7" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pigar-{{ version }}.tar.gz
-  sha256: 7918d6dece3ecc7003b8281d3493ac9c67d82c870016237be2f9993d8095155e
+  sha256: 870f43fc6da703fd9c62ed1a7f4a81ceb4e0336cce60be4c16bd7c3ebfe9f95b
 
 build:
   entry_points:
     - pigar = pigar.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -23,6 +23,10 @@ requirements:
     - wheel
     - pip
   run:
+    - cryptography
+    - docutils
+    - pyopenssl
+    - sphinx
     - python >={{ python_min }}
     - click >=8.1
     - nbformat >=5.7
